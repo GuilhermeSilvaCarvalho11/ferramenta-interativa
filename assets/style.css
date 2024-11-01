@@ -37,57 +37,121 @@ footer {
         margin-top: 0.5rem;
         }
     
-            .cartao {
-                margin: 1rem 1rem;
-                background-color:blanchedalmond;
-                height: 20rem;
-                flex-grow: 1;
-                flex-basis: calc(33% - 6rem);
-                }
-    
-                .cartao__conteudo {
-                    text-align: center;
-                    height: 100%;
-                    transform-style: preserve-3d;
-                    transition: transform 300ms ease-in-out;
-                    }
-    
-                        
-                    .cartao__conteudo h3 {
-                        color: var(--text-color);
-                        border: 1px solid var(--text-color);
-                        text-align: left;
-                        padding: 0.5rem;
-                        position: absolute;
-                        margin: 0.6rem;
-                        border-radius: 0.6rem;
-                        font-size: 1vw;
-                        backface-visibility: hidden;
-                    }
-    
-                    .cartao_conteudo__pergunta p {
-                        color: var(--text-color);
-                        font-weight: 500;
-                        padding-top: 4rem;
-                    }
-                        
-.cartao__conteudo__resposta {
-    backface-visibility: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
-    
-    
-.cartao__conteudo p {
-    margin-top: 1rem;
-    padding: 2rem;
-    margin-top: 4rem;
-    font-size: 1.4vw;
-    }
-    
+        .cartao__conteudo{
+            background: transparent;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 600ms ease-in-out; 
+            margin: 3em 1em; 
+        }
+        
+        .cartao__conteudo__pergunta, 
+        .cartao__conteudo__resposta{
+            position: absolute;
+            backface-visibility: hidden;   
+        }
+        
+        .cartao__conteudo__resposta{
+            background: rgb(173, 172, 171);
+            width: 200px;
+            height: 240px;
+            border-radius: 30px;
+            transform: rotateY(180deg);
+           
+        }
+        
+        .box:hover .cartao__conteudo {
+            transform: rotateY(180deg);
+            
+        }
+        
+        /*para colocar o efeito na borda*/
+        
+          .caixa {
+           margin: auto;
+            position: relative;
+            width: 50px;
+            height: 20px;
+            color: #151320;
+            background: #fff;
+            display: flex;
+           justify-content: center;
+            align-items: center;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        
+        .caixa::before, .caixa::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: calc(100% + 5px);
+            height: calc(100% + 5px);
+            background: linear-gradient(45deg, #c3c4c4, #979696, #646364, 
+            #839a9f, #d7d8d8, #9f9f9f, #939292, #646364);
+            background-size: 300%;
+            background-repeat: no-repeat;
+            background-position: 100%;
+            border-radius: 10px;
+            animation: AnimarBorda 4s linear infinite;
+            
+        }
+        
+        @keyframes AnimarBorda {
+            0% {
+                background-position: 0;
+            }
+            100% {
+                background-position: 300%;
+            }
+        }
+        .caixa::after {
+            filter: blur(5px);
+        }
+        
+        .caixa {
+            margin: auto;
+             position: relative;
+             width: 50px;
+             height: 20px;
+             color: #151320;
+             background: #fff;
+             display: flex;
+            justify-content: center;
+             align-items: center;
+             border-radius: 3px;
+             font-weight: 700;
+         }
+         
+         .caixa::before, .caixa::after {
+             content: '';
+             position: absolute;
+             z-index: -1;
+             width: calc(100% + 5px);
+             height: calc(100% + 5px);
+             background: linear-gradient(45deg, #128686, #8d1313, #646364, 
+             #839a9f, #d7d8d8, #881111, #939292, #b91bb9);
+             background-size: 300%;
+             background-repeat: no-repeat;
+             background-position: 100%;
+             border-radius: 10px;
+             animation: AnimarBorda 4s linear infinite;
+             
+         }
+         
+         @keyframes AnimarBorda {
+             0% {
+                 background-position: 0;
+             }
+             100% {
+                 background-position: 300%;
+             }
+         }
+         .caixa::after {
+             filter: blur(5px);
+         }
+         
