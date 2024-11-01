@@ -24,4 +24,3 @@ function viraCartao() {
 
 container.appendChild(cartao)
 }
-
