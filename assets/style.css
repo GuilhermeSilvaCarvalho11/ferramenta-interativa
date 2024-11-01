@@ -23,7 +23,7 @@ body {
     
 footer {
     background-color:lightblue;
-    color: #000
+    color:rgba(160, 95, 201, 0.932);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -89,5 +89,5 @@ footer {
     padding: 2rem;
     margin-top: 4rem;
     font-size: 1.4vw;
-}
+    }
     
